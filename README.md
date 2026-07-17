@@ -7,7 +7,7 @@
 [![Kaggle](https://img.shields.io/badge/Kaggle-GPU_Accelerated-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-SmartMRI is an advanced medical imaging analysis system that leverages deep learning to assist clinicians in the classification and localization of pathological abnormalities in MRI scans. The system features three state-of-the-art diagnostic pipelines built with PyTorch, backed by custom Grad-CAM explainability engines to isolate and highlight brain tumors, lumbar spinal stenosis, and stages of Alzheimer's disease.
+NeuroScan AI is an advanced neuroimaging analysis platform designed to assist clinicians and healthcare professionals in the automated analysis of neurological MRI scans. Powered by state-of-the-art deep learning models, the system provides intelligent detection and classification of neurological disorders from brain and spine MRI images. The platform currently supports Brain Tumor Detection, Alzheimer's Disease Classification, and Spine MRI Disorder Analysis, with integrated Grad-CAM explainability to visualize the regions that influence each prediction, promoting greater transparency and confidence in AI-assisted diagnosis.
 
 ![NeuroScan AI Landing Page](demo_images/app/app.png)
 
