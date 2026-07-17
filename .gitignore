@@ -1,0 +1,33 @@
+# Large local datasets
+data/
+
+# PyTorch checkpoints (exceed GitHub's 100MB upload limits)
+model/
+*.pth
+
+# Local SQLite databases
+backend/webapp.db
+*.db
+*.sqlite
+
+# Local uploaded MRI images and heatmaps
+backend/static/uploads/
+backend/static/reports/
+
+# Python caching and environment directories
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.env
+
+# Frontend dependencies and builds
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.production
+
+# Operating system files
+.DS_Store
+Thumbs.db

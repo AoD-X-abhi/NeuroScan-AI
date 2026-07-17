@@ -1,0 +1,14 @@
+fastapi>=0.111.0
+uvicorn>=0.30.0
+sqlalchemy>=2.0.0
+pydantic>=2.9.0
+pyjwt>=2.8.0
+bcrypt>=4.0.0
+python-multipart>=0.0.9
+torch>=2.0.0
+torchvision>=0.15.0
+opencv-python-headless>=4.10.0
+pillow>=10.4.0
+reportlab>=4.2.2
+requests>=2.32.3
+email-validator>=2.0.0
