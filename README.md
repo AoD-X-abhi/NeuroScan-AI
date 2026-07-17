@@ -96,6 +96,28 @@ AugmentedAlzheimerDataset (33,984 images total)
 
 ---
 
+## 📸 Platform Interface Showcase
+
+Here is a visual walk-through of the **NeuroScan AI** clinical web application:
+
+### 🏠 Platform Landing Page
+Allows clinicians and researchers to sign in, create accounts securely, and review platform telemetry metrics.
+![Landing Page](demo_images/app/app.png)
+
+### 📊 Clinical Dashboard
+Exposes the three diagnostic modules (Brain, Alzheimer's, and Spine) with responsive navigation controls.
+![Dashboard](demo_images/app/Dashboard.png)
+
+### 🧠 AI Inference & Grad-CAM Analysis
+Runs PyTorch inference predictions and renders the original scan side-by-side with the Grad-CAM localized abnormality heatmap.
+![AI Inference Result](demo_images/app/AI_PredictionResult.png)
+
+### 💬 Intelligent AI Consultation Assistant
+A dedicated assistant interface to query diagnostic questions on brain tumors, spinal stenosis, and dementia staging.
+![AI Consultancy Chat](demo_images/app/AI_Consultancy.png)
+
+---
+
 ## 🔬 Explainable AI: How Grad-CAM Works
 
 Since medical diagnostic models require clinical auditability, we implement **Gradient-weighted Class Activation Mapping (Grad-CAM)** to localize the specific pathological regions.
