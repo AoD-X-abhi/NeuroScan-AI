@@ -11,6 +11,14 @@ NeuroScan AI is an advanced neuroimaging analysis platform designed to assist cl
 
 ![NeuroScan AI Landing Page](demo_images/app/app.png)
 
+## 🚀 Live Deployment & Demo
+
+The application is fully deployed and available online:
+
+*   **Frontend Web Application (Vercel)**: [Live UI Demo](https://neuro-scan-ai.vercel.app) *(Note: if your Vercel URL has a suffix, you can update this link)*
+*   **Backend API Service (Render)**: [API Live Endpoint](https://neuroscan-ai-r2oa.onrender.com)
+*   **Interactive API Docs (Proof of Deployment)**: [Swagger API docs](https://neuroscan-ai-r2oa.onrender.com/docs) *(The active Swagger dashboard serves as proof that the backend models and database are live and functional)*
+
 ---
 
 ## 🌟 Key Features
