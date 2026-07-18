@@ -166,7 +166,7 @@ def query_chat_assistant(message: str, api_key: str = None) -> str:
 
         try:
 
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key={api_key}"
 
             payload = {
 

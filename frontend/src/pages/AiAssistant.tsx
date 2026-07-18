@@ -9,6 +9,68 @@ interface ChatMessage {
   timestamp: string;
 }
 
+const renderMessageContent = (text: string, isUser: boolean) => {
+  if (!text) return null;
+
+  // Split text by lines
+  const lines = text.split('\n');
+
+  const textColorClass = isUser ? 'text-white' : 'text-slate-700 dark:text-slate-300';
+  const boldColorClass = isUser ? 'text-white font-bold' : 'text-slate-900 dark:text-white font-semibold';
+  const headerColorClass = isUser ? 'text-white font-extrabold' : 'text-brand-blue dark:text-brand-cyan font-bold';
+
+  const parseInlineMarkdown = (textStr: string) => {
+    const parts = textStr.split(/\*\*([^*]+)\*\*/g);
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index} className={boldColorClass}>{part}</strong>;
+      }
+      return part;
+    });
+  };
+
+  return lines.map((line, idx) => {
+    // Check for headers
+    const headerMatch = line.match(/^(#{1,6})\s+(.*)$/);
+    if (headerMatch) {
+      const level = headerMatch[1].length;
+      const content = parseInlineMarkdown(headerMatch[2]);
+      if (level === 1) return <h1 key={idx} className={`text-base my-2 ${headerColorClass}`}>{content}</h1>;
+      if (level === 2) return <h2 key={idx} className={`text-sm my-2 ${headerColorClass}`}>{content}</h2>;
+      return <h3 key={idx} className={`text-xs mt-2 mb-1 ${headerColorClass}`}>{content}</h3>;
+    }
+
+    // Check for lists
+    const bulletMatch = line.match(/^[\*\-]\s+(.*)$/);
+    if (bulletMatch) {
+      return (
+        <ul key={idx} className={`list-disc pl-4 my-1 ${textColorClass}`}>
+          <li>{parseInlineMarkdown(bulletMatch[1])}</li>
+        </ul>
+      );
+    }
+
+    const numberMatch = line.match(/^(\d+)\.\s+(.*)$/);
+    if (numberMatch) {
+      return (
+        <ol key={idx} className={`list-decimal pl-4 my-1 ${textColorClass}`}>
+          <li value={parseInt(numberMatch[1])}>{parseInlineMarkdown(numberMatch[2])}</li>
+        </ol>
+      );
+    }
+
+    if (line.trim() === '') {
+      return <div key={idx} className="h-2" />;
+    }
+
+    return (
+      <p key={idx} className={`mb-1 ${textColorClass}`}>
+        {parseInlineMarkdown(line)}
+      </p>
+    );
+  });
+};
+
 export const AiAssistant: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputVal, setInputVal] = useState('');
@@ -182,7 +244,7 @@ export const AiAssistant: React.FC = () => {
                         ? 'bg-brand-blue text-white rounded-tr-none' 
                         : 'bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 text-brand-navy dark:text-slate-200 rounded-tl-none'
                     }`}>
-                      <p>{m.message}</p>
+                      <div>{renderMessageContent(m.message, isUser)}</div>
                       <span className={`block text-[9px] mt-1.5 text-right ${isUser ? 'text-white/60' : 'text-brand-slate'}`}>
                         {new Date(m.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </span>
