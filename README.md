@@ -1,4 +1,4 @@
-# SmartMRI: AI-Powered Medical Imaging Analysis System
+# NeuroScan AI: AI-Powered Medical Imaging Analysis System
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
